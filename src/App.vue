@@ -4,11 +4,29 @@
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  }
+import axios from 'axios';
+import { store } from './store';
+export default {
+  name: 'App',
+  data() {
+    return {
+      store,
+      projects: []
+    }
+  },
+  methods: {
+    getProjects() {
+      axios
+        .get(this.store.baseUrl + this.store.endPoints.projects)
+        .then((res) => {
+          console.log(res.data);
+        });
+    }
+  },
+  mounted() {
+    this.getProjects();
+  } 
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
