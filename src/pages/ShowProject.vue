@@ -1,17 +1,22 @@
 <template>
+ciao {{ slug }}
 
 </template>
 
 <script>
 import axios from 'axios';
-import { store } from '../store';
+
 export default {
     name: 'ShowProject',
     data() {
         return {
-            store,
+        
+        slug: this.$route.params.slug,
+
         }
+        
     }
+    
 }
 
 </script>
