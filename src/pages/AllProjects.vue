@@ -1,16 +1,11 @@
 <template>
     <h1>Tutti i progetti</h1>
     <div class="container">
-    <div class="row">
-      <div v-for="project in projects" :key="project.id" class="col-4 mb-5">
-        <h2>{{ project.title }}</h2>
+        <div class="row">
+            <CardComponent v-for="project in projects" :key="project.id" :project="project"/>
+        </div>
 
-        <p>{{ project.description }}</p>
 
-        <img :src="project.screenshot" :alt="project.title">
-
-      </div>
-    </div>
     <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -25,9 +20,13 @@
 
 <script>
 import axios from 'axios';
+import CardComponent from '../components/CardComponent.vue';
 import { store } from '../store';
 export default {
     name: 'AllProjects',
+    components: {
+        CardComponent
+    },
     data() {
     return {
       store,
