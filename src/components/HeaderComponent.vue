@@ -1,12 +1,23 @@
 <template>
-<ul>
-    <li>
-        <router-link :to="{ name: 'home' }">Home</router-link>
-    </li>
-    <li>
-        <router-link :to="{ name: 'projects' }">Progetti</router-link>
-    </li>
-</ul>
+    <div class="container d-flex justify-content-between">
+        <div>
+            <ul>
+                <li>
+                    <router-link :to="{ name: 'home' }">Home</router-link>
+                </li>
+                <li>
+                    <router-link :to="{ name: 'projects' }">Progetti</router-link>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <select class="form-select" aria-label="Default select example">
+            <option selected>Seleziona categoria</option>
+            <option v-for="technology in store.technologies" :key="technology.id">{{ technology.name }}</option>
+        </select>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -23,6 +34,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -39,11 +39,11 @@ export default {
   methods: {
     setParams(number) {
       this.currentPage = number
-      console.log(this.currentPage);
+      // console.log(this.currentPage);
       this.params = {
         page : this.currentPage
       }
-      console.log(this.params.page);
+      // console.log(this.params.page);
       this.getProjects();
     },
     getProjects() {
@@ -54,7 +54,7 @@ export default {
         .then((res) => {
           // console.log(res.data);
           this.projects = res.data.results.data;
-          // console.log(this.projects);
+          console.log(res.data.results);
           this.currentPage = res.data.results.current_page;
           // console.log(this.currentPage);
           this.lastpage = res.data.results.last_page;
