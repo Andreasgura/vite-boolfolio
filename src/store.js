@@ -5,7 +5,8 @@ export const store = reactive({
     endPoints: {
         projects: "/projects",
         types: "/types",
-        technologies: "/technologies"
+        technologies: "/technologies",
+        contacts: "/contacts",
     },
     technologies: [],
     types: [],
